@@ -46,7 +46,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	private static final File MAP_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
 			"rhone-alpes.map");// "berlin.map");
 	private static final File POIS_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
-			"pois.osm");
+			"POIs.osm");
 	public LocationManager locationManager;
 	public Marker myPosition;
 	public MapView mapView;
@@ -117,10 +117,14 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		mapView.setClickable(true);
 		mapView.setBuiltInZoomControls(true);
 		FileOpenResult fileOpenResult = mapView.setMapFile(MAP_FILE);
+		
+		new ReadXMLFile(POIS_FILE);
+		
 		if (!fileOpenResult.isSuccess()) {
 			Toast.makeText(this, fileOpenResult.getErrorMessage(), Toast.LENGTH_LONG).show();
 			finish();
 		}
+		System.out.println("HERE "+POIS_FILE);
 		setContentView(mapView);
 
 		// INUTILE ! ----
