@@ -55,52 +55,6 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 
 	private boolean resumeHasRun = false;
 
-	/*
-	private static Circle createCircle() {
-		Paint paintFill = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paintFill.setStyle(Paint.Style.FILL);
-		paintFill.setColor(Color.BLUE);
-		paintFill.setAlpha(64);
-		Paint paintStroke = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paintStroke.setStyle(Paint.Style.STROKE);
-		paintStroke.setColor(Color.BLUE);
-		paintStroke.setAlpha(128);
-		paintStroke.setStrokeWidth(3);
-		return new Circle(CENTRAL_STATION, 200, paintFill, paintStroke);
-	}
-
-	private static Polygon createPolygon() {
-		List<GeoPoint> geoPoints = Arrays.asList(VICTORY_COLUMN, CENTRAL_STATION, BRANDENBURG_GATE);
-		PolygonalChain polygonalChain = new PolygonalChain(geoPoints);
-		Paint paintFill = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paintFill.setStyle(Paint.Style.FILL);
-		paintFill.setColor(Color.YELLOW);
-		paintFill.setAlpha(96);
-		paintFill.setStrokeCap(Cap.ROUND);
-		paintFill.setStrokeJoin(Paint.Join.ROUND);
-		Paint paintStroke = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paintStroke.setStyle(Paint.Style.STROKE);
-		paintStroke.setColor(Color.GRAY);
-		paintStroke.setAlpha(192);
-		paintStroke.setStrokeWidth(5);
-		paintStroke.setStrokeCap(Cap.ROUND);
-		paintStroke.setStrokeJoin(Paint.Join.ROUND);
-		return new Polygon(Arrays.asList(polygonalChain), paintFill, paintStroke);
-	}
-
-	private static Polyline createPolyline() {
-		List<GeoPoint> geoPoints = Arrays.asList(BRANDENBURG_GATE, VICTORY_COLUMN);
-		PolygonalChain polygonalChain = new PolygonalChain(geoPoints);
-		Paint paintStroke = new Paint(Paint.ANTI_ALIAS_FLAG);
-		paintStroke.setStyle(Paint.Style.STROKE);
-		paintStroke.setColor(Color.MAGENTA);
-		paintStroke.setAlpha(128);
-		paintStroke.setStrokeWidth(7);
-		paintStroke.setPathEffect(new DashPathEffect(new float[] { 25, 15 }, 0));
-		return new Polyline(polygonalChain, paintStroke);
-	}
-	*/
-
 	// ListOverlay mOverlayList = new ListOverlay();
 	// List<OverlayItem> overlayItems = mOverlayList.getOverlayItems();
 	// mapView.getOverlays().add(mOverlayList);
@@ -118,51 +72,35 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		mapView.setBuiltInZoomControls(true);
 		FileOpenResult fileOpenResult = mapView.setMapFile(MAP_FILE);
 		
-		ReadXMLFile reader = new ReadXMLFile();
-		listPOIs = new ArrayList<POI>(reader.readXMLFile(POIS_FILE));
 		
-		System.out.println("size:"+listPOIs.size());
-		for(int i=0; i<listPOIs.size(); i++) {
-			System.out.println("t:"+listPOIs.get(i).getId());
-		}
 		
 		if (!fileOpenResult.isSuccess()) {
 			Toast.makeText(this, fileOpenResult.getErrorMessage(), Toast.LENGTH_LONG).show();
 			finish();
 		}
-		System.out.println("HERE "+POIS_FILE);
 		setContentView(mapView);
-
-		// INUTILE ! ----
-		/*
-		 * Circle circle = createCircle(); Polygon polygon = createPolygon(); Polyline polyline = createPolyline();
-		 */
-		// --------------
-
-		// Marker marker2 = createMarker(R.drawable.marker_green, BRANDENBURG_GATE);
-		// GeoPoint INIT = new GeoPoint(45.184042, 5.725933);
-
-		myPosition = createMarker(R.drawable.marker_green, new GeoPoint(0, 0));
-		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-		// LocationManager.GPS_PROVIDER; = Position GPS par la puce GPS
-		// LocationManager.NETWORK_PROVIDER; = Position GPS selon Wifi et réseau;
+		
+		myPosition = createMarker(R.drawable.marker_green, new GeoPoint(0, 0));			//Position GPS par la puce GPS
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);	//Position GPS selon Wifi et réseau;
 
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, this);
-		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 0, this); // <-- inutile car la
-		// nexus 7 n'a pas de SIM et pas de wifi dans la rue
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 0, this);
 
 		ListOverlay listOverlay = new ListOverlay();
 		List<OverlayItem> overlayItems = listOverlay.getOverlayItems();
-		// INUTILE ! ----
-		/*
-		 * overlayItems.add(circle); overlayItems.add(polygon); overlayItems.add(polyline);
-		 */
-		// --------------
-		// overlayItems.add(marker1);
 
 		overlayItems.add(myPosition);
+		setPOIOnMap(overlayItems);
 		mapView.getOverlays().add(listOverlay);
+	}
+	
+	public void setPOIOnMap(List<OverlayItem> overlayItems) {
+		ReadXMLFile reader = new ReadXMLFile();
+		listPOIs = new ArrayList<POI>(reader.readXMLFile(POIS_FILE));
+		
+		for(int i=0; i<listPOIs.size(); i++) {
+			overlayItems.add(createMarker(R.drawable.marker_red, new GeoPoint(listPOIs.get(i).getLat(), listPOIs.get(i).getLon())));
+		}
 	}
 
 	@Override
