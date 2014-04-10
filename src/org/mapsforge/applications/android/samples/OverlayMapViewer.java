@@ -51,7 +51,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	public Marker myPosition;
 	public MapView mapView;
 
-	public ArrayList<Marker> listPOI = new ArrayList();
+	public ArrayList<POI> listPOIs;
 
 	private boolean resumeHasRun = false;
 
@@ -118,7 +118,13 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		mapView.setBuiltInZoomControls(true);
 		FileOpenResult fileOpenResult = mapView.setMapFile(MAP_FILE);
 		
-		new ReadXMLFile(POIS_FILE);
+		ReadXMLFile reader = new ReadXMLFile();
+		listPOIs = new ArrayList<POI>(reader.readXMLFile(POIS_FILE));
+		
+		System.out.println("size:"+listPOIs.size());
+		for(int i=0; i<listPOIs.size(); i++) {
+			System.out.println("t:"+listPOIs.get(i).getId());
+		}
 		
 		if (!fileOpenResult.isSuccess()) {
 			Toast.makeText(this, fileOpenResult.getErrorMessage(), Toast.LENGTH_LONG).show();

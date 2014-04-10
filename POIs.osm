@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' upload='true' generator='JOSM'>
   <node id='000' title='Introduction' lat='35.72017462369266' lon='6.754103765965746'>
-    <text>
-Le quartier Très-Cloîtres remonte à la fortification de la ville gallo-romaine de Cularo. Situé, dès le 3e siècle, à l'extérieur des fortifications, de l'autre coté de la clôture, Très-Cloitres a de tous temps été un quartier populaire où arrivent les nouveaux arrivants. 
+    <text>Le quartier Très-Cloîtres remonte à la fortification de la ville gallo-romaine de Cularo. Situé, dès le 3e siècle, à l'extérieur des fortifications, de l'autre coté de la clôture, Très-Cloitres a de tous temps été un quartier populaire où arrivent les nouveaux arrivants. 
 C'est un quartier dont l'histoire raconte celle des petites gens, des travailleurs et de ceux qui deviendront les futurs grenoblois. 
 Ses habitants, dans les années 80, écrivaient, que "de tous les quartiers de Grenoble, celui-ci est peut-être le plus percutant, le plus attachant par son histoire humaine et sa diversité des modes de vie". 
 Nous vous invitons à le découvrir.
     </text>
   </node>
-  
+
   <node id='001' title='' lat='35.72017462369266' lon='6.754103765965746' />
   <node id='002' title='' lat='35.71981040350002' lon='6.754516649104624' />
   <node id='003' title='' lat='35.71939138705961' lon='6.753877474245399' />

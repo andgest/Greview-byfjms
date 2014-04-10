@@ -15,6 +15,7 @@
 package org.mapsforge.applications.android.samples;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -25,7 +26,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
  
 public class ReadXMLFile {
-	public ReadXMLFile(File fXmlFile) {
+	public ArrayList<POI> readXMLFile(File fXmlFile) {
 		try {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -38,27 +39,35 @@ public class ReadXMLFile {
 			System.out.println("Root element :" + doc.getDocumentElement().getNodeName()); //osm
 		 
 			NodeList listePOIs = doc.getElementsByTagName("node");
-			System.out.println("----------------------------");
+			
+			ArrayList<POI> listPOIs = new ArrayList<POI>();
 		 
 			for (int i = 0; i < listePOIs.getLength(); i++) {
-		 
+				
 				Node nNode = listePOIs.item(i);
 		 
 				System.out.println("\n" + nNode.getNodeName() + " : POI n°"+i);
 		 
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-		 
 					Element eElement = (Element) nNode;
-		 
+					
 					System.out.println("id : " + eElement.getAttribute("id"));
 					System.out.println("title: " + eElement.getAttribute("title"));
 					System.out.println("lat : " + eElement.getAttribute("lat"));
 					System.out.println("lon : " + eElement.getAttribute("lon"));
-					System.out.println("text : " + eElement.getElementsByTagName("text").item(0).getTextContent());
+					String text = "";
+					if(eElement.getElementsByTagName("text").item(0) != null) {
+						text = eElement.getElementsByTagName("text").item(0).getTextContent();
+						System.out.println("text : " + text);
+					}
+					POI poi = new POI(Integer.parseInt(eElement.getAttribute("id")), eElement.getAttribute("title"), Double.parseDouble(eElement.getAttribute("lat")), Double.parseDouble(eElement.getAttribute("lon")), text);
+					listPOIs.add(poi);
 				}
 			}
+			return listPOIs;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
   
