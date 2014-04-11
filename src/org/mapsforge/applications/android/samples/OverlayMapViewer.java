@@ -17,6 +17,7 @@ package org.mapsforge.applications.android.samples;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.mapsforge.android.maps.MapActivity;
 import org.mapsforge.android.maps.MapView;
@@ -33,12 +34,14 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Environment;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
  * An application which demonstrates how to use overlays.
  */
-public class OverlayMapViewer extends MapActivity implements LocationListener {
+public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
 	// private static final GeoPoint BRANDENBURG_GATE = new GeoPoint(52.516273, 13.377725);
 	// private static final GeoPoint CENTRAL_STATION = new GeoPoint(52.52498, 13.36962);
 	// private static final GeoPoint VICTORY_COLUMN = new GeoPoint(52.514505, 13.350111);
@@ -52,6 +55,9 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	public MapView mapView;
 
 	public ArrayList<POI> listPOIs;
+	private POI poiNerest;
+	
+	private TextToSpeech mTts;
 
 	private boolean resumeHasRun = false;
 
@@ -92,8 +98,10 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		mapView.getOverlays().add(listOverlay);
 		
 		
-		POI poiNerest = getNearestPOI(1000);
+		poiNerest = getNearestPOI(1000);
 		System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
+		
+		mTts = new TextToSpeech(this, this);
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
@@ -140,7 +148,6 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	
 	public POI getNearestPOI(double seuil) {
 		
-		
 		double minDist = 9999999;
 		int id = -1;
 		
@@ -164,8 +171,27 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	public double getDistance(POI aPOI) {
 		return Math.sqrt(Math.pow(myPosition.getGeoPoint().latitude - aPOI.getLat(), 2) + Math.pow((myPosition.getGeoPoint().longitude - aPOI.getLon()), 2));
 	}
-	
 
+	@Override
+	public void onInit(int status) {
+		// vérification de la disponibilité  de la synthèse vocale.
+		if (status == TextToSpeech.SUCCESS) {
+			//le choix de la langue ici français
+			int result = mTts.setLanguage(Locale.FRANCE);
+			// vérification ici si cette langue est supporté par le terminal et si elle existe
+			if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+				//renvoi une erreur sur la console logcat.
+				Log.e("Greview", "Language is not available.");
+			} else {
+				mTts.speak(poiNerest.getText(), TextToSpeech.QUEUE_FLUSH,  null);
+				//ParleandroidPhone();
+			}
+		} else {
+			// si la synthèse vocal n'est pas disponible
+			Log.e("Greview", "Could not initialize TextToSpeech.");
+		}
+	}
+	
 }
 
 

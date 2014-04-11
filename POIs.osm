@@ -30,8 +30,16 @@ Aujourd'hui encore, comme vous allez le découvrir, ce lieu reste le quartier o�
 
 A suivre</text>
   </node>
-  <node id='3' title='' lat='35.71939138705961' lon='6.753877474245399'>
-    <text></text>
+  <node id='3' title='Coucou' lat='35.71939138705961' lon='6.753877474245399'>
+    <text>Si aujourd'hui le quartier où vous vous trouvez comporte bien trois "anciens" cloîtres, l'origine de son nom est l'objet d'un petit mystère. 
+Très-Cloîtres, trois cloîtres? 
+Une autre piste nous mène vers l'histoire même de la création de ce quartier, qui avant d'être partie intégrante du centre-ville de Grenoble, fut un faubourg et avant même… un lieu indistinct. Le terme d'alors, latin, le désignait comme l'espace qui se trouve de l'autre coté du rempart. "Très-Cloîtres" viendrait alors de "trans-cloîtres", littéralement "au-delà de la porte, au-delà du mur d'enceinte".
+
+Cette piste nous guide tout droit vers l'histoire de ce lieu de vie. 
+Alors pourquoi "hors les murs"? Et bien, tout simplement parce qu'à l'époque d'un Grenoble qui était encore Cularo, la cité gallo-romaine, dormaient "hors les murs" les pauvres, les migrants et les gens de passage. 
+Des son origine, Très-Cloîtres est donc le lieu de vie de ceux qui arrivent à la ville. 
+
+Aujourd'hui encore, comme vous allez le découvrir, ce lieu reste le quartier où s'installent les nouveaux grenoblois.</text>
   </node>
   <node id='4' title='' lat='35.71973304678456' lon='6.753536051649787'>
     <text></text>
