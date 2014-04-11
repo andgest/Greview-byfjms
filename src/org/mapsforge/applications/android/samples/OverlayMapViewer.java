@@ -72,8 +72,6 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		mapView.setBuiltInZoomControls(true);
 		FileOpenResult fileOpenResult = mapView.setMapFile(MAP_FILE);
 		
-		
-		
 		if (!fileOpenResult.isSuccess()) {
 			Toast.makeText(this, fileOpenResult.getErrorMessage(), Toast.LENGTH_LONG).show();
 			finish();
@@ -92,6 +90,10 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		overlayItems.add(myPosition);
 		setPOIOnMap(overlayItems);
 		mapView.getOverlays().add(listOverlay);
+		
+		
+		POI poiNerest = getNearestPOI(1000);
+		System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
@@ -120,7 +122,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 	public void onProviderEnabled(String provider) {
 
 	}
-
+	
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 
@@ -135,4 +137,35 @@ public class OverlayMapViewer extends MapActivity implements LocationListener {
 		}
 
 	}
+	
+	public POI getNearestPOI(double seuil) {
+		
+		
+		double minDist = 9999999;
+		int id = -1;
+		
+		System.out.println("(Double) null : "+(Double) null);
+		for(int i=0; i<listPOIs.size(); i++) {
+			double tmp = getDistance(listPOIs.get(i));
+			if(minDist > tmp) {
+				minDist = tmp;
+				id = i;
+			}
+		}
+		
+		System.out.println("POI numero : "+id+" est le plus proche de nous, a une distance de : "+minDist);
+		POI ret = null;
+		if(minDist<seuil) {
+			ret = listPOIs.get(id);
+		}
+		return ret;
+	}
+	
+	public double getDistance(POI aPOI) {
+		return Math.sqrt(Math.pow(myPosition.getGeoPoint().latitude - aPOI.getLat(), 2) + Math.pow((myPosition.getGeoPoint().longitude - aPOI.getLon()), 2));
+	}
+	
+
 }
+
+
