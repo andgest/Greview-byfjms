@@ -30,23 +30,268 @@ Aujourd'hui encore, comme vous allez le découvrir, ce lieu reste le quartier o�
 
 A suivre</text>
   </node>
-  <node id='3' title='Coucou' lat='35.71939138705961' lon='6.753877474245399'>
-    <text>Si aujourd'hui le quartier où vous vous trouvez comporte bien trois "anciens" cloîtres, l'origine de son nom est l'objet d'un petit mystère. 
-Très-Cloîtres, trois cloîtres? 
-Une autre piste nous mène vers l'histoire même de la création de ce quartier, qui avant d'être partie intégrante du centre-ville de Grenoble, fut un faubourg et avant même… un lieu indistinct. Le terme d'alors, latin, le désignait comme l'espace qui se trouve de l'autre coté du rempart. "Très-Cloîtres" viendrait alors de "trans-cloîtres", littéralement "au-delà de la porte, au-delà du mur d'enceinte".
+  <node id='3' title="Ste Marie d'en Bas" lat='35.71939138705961' lon='6.753877474245399'>
+    <text>La disposition des lieux de cultes dans le quartier Très-Cloîtres doit peu au hasard. Si autour de la cathédrale s'articulent pas moins de trois autres lieux de culte catholique, c'est dans l'histoire des religions en France et à Grenoble qu'il faut aller chercher l'explication. 
 
-Cette piste nous guide tout droit vers l'histoire de ce lieu de vie. 
-Alors pourquoi "hors les murs"? Et bien, tout simplement parce qu'à l'époque d'un Grenoble qui était encore Cularo, la cité gallo-romaine, dormaient "hors les murs" les pauvres, les migrants et les gens de passage. 
-Des son origine, Très-Cloîtres est donc le lieu de vie de ceux qui arrivent à la ville. 
+Les Guerres de religions mettent le pays à feu et à sang entre 1562 et 1598. A Grenoble, la situation est particulière puisque sous l'autorité de François de Bonne de Lesdiguières, noble protestant, la ville devient un lieu de moindre persécution pour les Protestants de l'époque. 
+A la fin du 16e siècle, ceux-ci se concentrent dans les zones situées à la périphérie de la ville et notamment à Très-Cloîtres. 
+Lesdiguières instaure un climat de tolérance religieuse entre les habitants qui n'empêche pas les deux Eglises de s'engager dans une relation de concurrence pour le contrôle des âmes et donc le contrôle des habitants de Grenoble. 
+Dans cette lutte de tous les jours, la ville est divisée en quartiers catholiques et protestants. Le combat se fait pour le contrôle de chaque rue. 
+Dès lors, si les Protestants sont tolérés, il leur reste interdit de construire des lieux de cultes à l'intérieur des rampants de la ville. C'est donc dans les zones du pourtour de Grenoble que des temples apparaissent et notamment… à Très-Cloîtres. 
+Malgré la proclamation de l'Edit de Nantes, en 1598, qui met fin aux guerres de religion, la Contre-Réforme, destinée à contrer l'influence grandissante du protestantisme en France va s'incarner par l'implantation de lieux de culte catholiques à Grenoble. 
+Une véritable ceinture vient repousser les protestants: les Bernardines s'installent au Couvent Ste-Cécile en 1624, les Minimes en 1646 et les Visitandines fondent Sainte-Marie d'en Bas en 1647.
 
-Aujourd'hui encore, comme vous allez le découvrir, ce lieu reste le quartier où s'installent les nouveaux grenoblois.</text>
+Aujourd'hui Ste-Marie d'en bas est un lieu de culture: théâtre et lieu de concert.
+Pour en savoir plus: </text>
   </node>
-  <node id='4' title='' lat='35.71973304678456' lon='6.753536051649787'>
+  <node id='4' title='Rue Chenoise' lat='0' lon='0'>
+    <text>L'hôtel d'Ornacieux construit au XVIIe siècle (1630) a pris le nom de Vaucanson qui y vécut après son mariage. Vous pouvez toujours admirer son portail de style Louis XIII. 
+Vaucanson, l'inventeur des automates y vivra au cours du 18e siècle.
+
+Un portail en appareil polychrome à bossage, ouvre sur un passage voûté conduisant à la cour intérieure. Dans celle-ci, un bel escalier à loggias occupe tout un côté.
+La rue Chenoise, autrefois "Chaunesia", tire son nom de la famille Chaulnais ou Chaunais dont on retrouve la trace dans le Grenoble du XIe siècle. Elle est à l'origine de la construction de la Tour de Sassenage que vous pouvez observer au niveau du No3 de la rue.
+Aujourd'hui sombre, la rue Chenoise connait ses heures de gloire après la révolution puisqu'elle accueillait plusieurs hôtels particuliers, détenus par les aristocrates de l'époque derrière les lourdes double-portes qui la jalonnent.</text>
+  </node>
+  <node id='5' title='La tour de Sassenage' lat='0' lon='0'>
+    <text>La tour de Sassenage se dessine au-dessus des toits du centre-ville historique de Grenoble. Construite en briques, elle a la forme d'un donjon qui traduit la qualité ou les prétentions nobiliaires de la famille Chaulnay qui l'a fit construire au XIe siècle.
+
+C'est au XVIIe qu'elle sera incluse dans un hôtel particulier en reconstruction à l'époque.  
+
+Cette construction en brique se retrouve d'ailleurs plus loin dans la rue, au No20, qui abritait un autre hôtel particulier dont les deux bâtiments s'organisent autour d'une cour.
+A propos de l'utilisation de la brique comme matériau de construction, les historiens s'accordent à penser qu'ils témoignent de l'apparition des habitations à plusieurs étages autour du Xe-XIe siècles, qui deviendront typiques de l'architecture des centres urbains.
+
+Pour aller plus loin, lire le travail d'Alain de Montjoye, "La maison médiévale en brique (XIIe-XIVe siècles) en France méridionale", disponible sur http://www.societes-savantes-toulouse.asso.fr/samf/memoires/hrseri2002/MONTJOYE.pdf</text>
+  </node>
+  <node id='6' title='Rue Brocherie' lat='0' lon='0'>
+    <text>Aujourd'hui rue vivante et animée du centre-ville, la rue Brocherie d'aujourd'hui est la "rue du milieu" du Moyen-Age. Appelée au XVIe, rue "Moyenne de la Brocherie", certains pensaient que son nom lui venait de la "Bucherie", dérivatif du nom de l'hôtel particulier de Pierre Bucher, procureur général du Roi et doyen de l'université de Grenoble. 
+D'autres affirment que le nom provient des "marchants brochiers", vendeurs de brocs et de vases en bois, qui habitaient la rue. 
+
+Enfin, au XIIIe siècle, dans la rue Brocherie que se situait le four à pain de la rive gauche de Grenoble. Les propriétaires du four n'étaient autres que le Dauphin et l'Evêque.</text>
+  </node>
+  <node id='7' title='Place Sainte-Claire' lat='0' lon='0'>
+    <text>C'est sur l'espace laissé vide par la destruction du Couvent Sainte-Claire en 1818 que les Halles voient le jour. A l'époque, les autorités de Grenoble estiment nécessaire de répondre aux besoins des habitants en édifiant un marché couvert, réalisé par l'architecte du département Hector Riondel.</text>
+  </node>
+  <node id='8' title='Place Notre-Dame' lat='0' lon='0'>
+    <text>Avant de devenir Place Notre-Dame au Xe siècle, cet espace était auparavant la place Saint-Vincent, un lieu attenant à la Cathédrale et servant de cimetière. 
+A la révolution, alors que la Cathédrale devient le "Temple de la Raison", la place devient celle de la raison également.</text>
+  </node>
+  <node id='9' title='La Fontaine des 3 ordres' lat='0' lon='0'>
+    <text>Dessinée par l'architecte grenoblois Henri Ding, la fontaine des Trois Ordres a été voulue par le député Gustave Rivet pour marquer l'origine de la révolution française à Grenoble. Initié en 1886, la fontaine est finalement inaugurée, place Notre-Dame, le 4 aout 1897 par le maire de Grenoble, Stéphane Jay en présence du président de la république, Félix Faure.</text>
+  </node>
+  <node id='10' title='Couvent Ste-Cécile' lat='0' lon='0'>
+    <text>Siège social de la maison d'édition Glénat depuis sa restauration en 2009, le Couvent Ste-Cécile a connu bien des mutations au fil de l'histoire de Grenoble et du quartier Très-Cloîtres. 
+C'est en novembre 1624, alors que la Contre-Réforme grenobloise bat son plein que le Couvent Sainte-Cécile est fondé par l'ordre des Bernardines.
+Le couvent fait partie d'un ensemble d'édifices religieux construits à la même époque qui constitue un véritable ceinture contre l'influence protestante, reléguée à l'extérieur des ramparts.
+
+Au 18e siècle, le couvent est entouré d'hôtels aristocratiques et d'ateliers d'artisans, notamment des menuisiers et des ébénistes comme la famille Hache.
+
+A la révolution, et sous la Terreur, les ordres religieux perdent leur protection. En 1793, l'armée prend possession du lieu pour y installer un atelier de confection des uniformes. Ailleurs à Très-Cloîtres, des artisans forgent des armes dans l'ancienne Eglise des Carmes et fabriquent des fusils dans l'ancien Couvent des Minimes.
+
+A l'issue de la guerre de 1871 contre la Prusse, les militaires restituent le lieu à la ville qui en fait le premier musée dauphinois. Devant le risque d'incendie posé par l'architecture des locaux, la ville accède, en 1921, à une demande visant à faire de l'ancien couvent un lieu de spectacle et une salle de cinéma.
+
+Un des habitants du quartier se rappelle que dans sa jeunesse, les garçons du quartier venaient régler leurs différents devant la salle du cinéma La Scala. 
+
+Après la Seconde Guerre Mondiale, c'est un 'dancing' qui accueillera la jeunesse grenobloise dans cet ancien lieu de culte. Ironie et provocation, ce dancing s'appellera l'Enfer.
+La ville résidera les baux du cinéma et de la salle de danse en 1951.
+
+Dans les années 1980, le lieu deviendra un théâtre, le Rio, qui accueille alors la compagnie d'Yvon Chaix.
+
+Pour découvrir ce que la restauration dirigée par le groupe Glénat a fait de cet ancien couvent, nous vous invitons à pousser la lourde porte rouge. Préparez-vous à une surprise...</text>
+  </node>
+  <node id='11' title='Rue Jean-Jacques Rousseau' lat='0' lon='0'>
+    <text>En juillet 1768, Jean-Jacques Rousseau, qui fuit les persécutions dont il est la cible depuis la parution de L'Emile et le Contrat Social, arrive à Grenoble. Il s'y installe sous le nom de Renou, qui est celui de la mère de sa maitresse, Thérèse Levasseur. 
+
+Quand il arrive, sa réputation de penseur le précède et lui vaut l'attention des édiles comme des citoyens de la ville. Lui qui s'avère être un misanthrope soucieux de ne pas attirer l'attention, et qui soupçonne ses proches de comploter contre lui, ne va pas supporter la célébrité dont il jouit.
+
+L'origine de son départ précipité fait l'objet de diverses hypothèses: certains disent qu'il aurait été victime d'une tentative d'escroquerie de la part d'un certain Thévenin, d'autres expliquent que c'est à la suite d'une bourde commise par le président du Parlement du Dauphiné, M. Bérulle, qui aurait avoué à Rousseau ne jamais avoir lu l'un de ses livres, que le philosophe aurait pris la décision de quitté Grenoble pour Bourgoin après y avoir séjourné moins d'un mois.</text>
+  </node>
+  <node id='12' title='Rue du Fer à Cheval' lat='0' lon='0'>
+    <text>Bien qu'historiquement la rue Très-Cloîtres ait accueilli de nombreux artisans, il n'y a jamais eu de maréchal-ferrant ici. 
+Le nom lui vient de sa forme particulière. Sous l'Ancien Régime (avant la révolution française), la rue s'appelait rue des Houliers en raison de la présence d'ateliers de poterie. En effet en patois dauphinois, le terme 'houle" désignait un vase ou une marmite.</text>
+  </node>
+  <node id='13' title='Rue Servan' lat='0' lon='0'>
+    <text>Baptisée d'après Antoine Servan (1737-1807), penseur du rôle de l'éducation dans la construction du patriotisme. Influencé par les penseurs politiques de son temps, il défend l'idée d'une réforme politique qui instaure un régime basé sur la défense des libertés individuelles, selon les idées de Montesquieu et Voltaire. Elu aux Etats-Généraux de 1789, il ne pourra s'y rendre pour des raisons de santé.
+Par ailleurs, son frère, Joseph, sera ministre de la Guerre pendant la Révolution. </text>
+  </node>
+  <node id='14' title='Ancien collège des Jésuites' lat='0' lon='0'>
+    <text>Aujourd'hui lycée Stendhal, le bâtiment fut à sa fondation, en 1651, le Collège des Jésuites. Construit dans le contexte de la Contre-Réforme qui voit la construction de nombreux édifices religieux catholiques à cette époque, ce collège va accueillir dans ses murs l'élève Henri Beyle Stendhal à la fin du 18e siècle.
+
+Si vous poussez la porte du bâtiment, vous pourrez découvrir, dans un escalier, un cadran solaire à réflexion. Oeuvre du père jésuite Jean Bonfa, elle fut achevée en 1673.</text>
+  </node>
+  <node id='15' title='Ancienne bibliothèque de Grenoble' lat='0' lon='0'>
+    <text>En 1771, l'évêque de Grenoble, et grand bibliophile, Jean de Caulet, meurt en laissant dans son héritage une bibliothèque privée de plus de 30 000 ouvrages. Afin de ne pas perdre ce fonds que les grands souverains d'Europe pensent récupérer, une grande souscription est ouverte. Les dons de la noblesse locale ajoutée aux contributions des habitants vont permettre de racheter la bibliothèque de l'évêque. 
+
+En 1772, la bibliothèque est rendue publique sous le contrôle de la ville. En France, ce n'est qu'au siècle suivant que les bibliothèques municipales verront le jour. 
+C'est en 1880 que la bibliothèque est installée dans ce qui est alors l'Ecole Centrale de Grenoble qui a succédé au Collège des Jésuites. 
+
+En 1872, la Bibliothèque s'installe dans un bâtiment construit à cet effet sur l'actuelle place de Verdun.</text>
+  </node>
+  <node id='16' title='Journée des Tuiles de Grenoble' lat='0' lon='0'>
+    <text>Au printemps 1788, le roi de France, Louis XVI, décide la levée de nouveaux impôts ainsi que la baisse significative du pouvoir des parlements locaux. 
+Dans le Dauphiné, le Duc de Clermont-Tonnerre, Lieutenant-Général du roi, fait enregistrer de force ces édits le 10 mai. Les parlementaires de Grenoble protestent et dénoncent l'illégalité de cette pratique qui les prive de leur pouvoir de discussion. 
+Le président du Parlement, André de Bérulle, annonce alors que le Parlement, s'il ne retrouve pas ses pouvoirs, se regardera comme entièrement dégagé de sa fidélité envers le roi. 
+Immédiatement, les parlementaires les plus contestataires sont enfermés sur ordre du roi le 7 juin. 
+
+En réaction, la population de la ville s'empare des portes qui contrôlent l'accès à la ville. 
+
+Le Duc de Clermont-Tonnerre dispose de plusieurs régiments répartis en différents points de la ville. Depuis l'Hôtel du gouvernement, situé à l'arrière de l'actuel Collège Stendhal, il tente par deux fois d'envoyer la troupe contre les manifestants. Les soldats ouvrent le feu sur la foule, malgré les consignes. La tensions monte. 
+
+Face à la troupe qui s'engage dans les ruelles, les habitants grimpent sur les toits et, au 8 de la rue Servan, commencent à jeter les tuiles sur les soldats du roi. Les habitants ont utilisé ce qu'ils avaient sous la main, en se protégeant des fusils des soldats. Chaque tuile pèse environ 2 kgs et constitue donc une arme redoutable.
+
+Dans les rues étroites du quartier Très-Cloitres, les soldats sont pris en tenaille par les habitants. 
+
+Une semaine plus tard, la réunion des Trois Ordres de Grenoble redonne aux Parlements leurs pouvoirs. Peu de temps après, la réunion des Etats-Généraux à Vizille marquera le début de la Révolution française.
+
+Une controverse historique perdure quant à la localisation exacte de l'épisode des tuiles jetées sur les soldats. Malgré l'abondante documentation, aucun témoin n'a pensé à conserver la trace de l'adresse où s'est déroulé l'épisode. Si l'on comprend aujourd'hui que ce sont très probablement les habitants de Très-Cloitres et les artisans de la rue Neuve (c'est-à-dire la rue Servan actuelle) c'est parce que la population et la configuration des lieux est propice. 
+
+Stendhal, lui, dans sa Vie de Henry Brulard, raconte que les tuiles seraient tombées devant le Collège des Jésuites, l'actuel lycée Stendhal. C'est cette scène qui est représentée par le peintre Alexandre Debelle, auteur du tableau Journée des Tuiles, 7 juin 1788. Il est exposé au Musée de la Révolution Française à Vizille. Alors pourquoi ce désaccord sur un lieu aussi important pour l'histoire française?</text>
+  </node>
+  <node id='17' title="Renovation TC - cour de l'Alma" lat='0' lon='0'>
+    <text>Dans les années 1980, l'insalubrité du quartier est devenue trop criante. Déjà dans les années 1960 et 70, alors que la ville connait une vague de projet d'urbanisme innovant visant à construire des logements ou réaménager des pans entiers de la ville, les chercheurs avaient pointé du doigt les conditions de vie fortement dégradées à Très-Cloîtres.
+
+Un programme en deux phases est alors engagé qui promet la mise aux normes sanitaires des logements mais aussi la construction de logements sociaux pour héberger de nouvelles populations. 
+
+Le projet entraine un mouvement d'opposition des habitants qui craignent de se voir reléguer hors du centre-ville et des lieux de sociabilité culturelle. 
+
+Le quartier dans lequel vous vous trouvez aujourd'hui est en perpétuelle évolution, comme le reste de la ville. Il mêle habitat social, locatif et des propriétaires qui cohabitent dans un ensemble de bâtis mêlant l'ancien rénové, et du neuf. C"est en regardant le plan cadastral que Très-Cloîtres révèle son passé. L'imbrication et la petite taille des parcelles reprend le tracés des premières constructions enregistrées. Et celles-ci remontent … au 3e siècle tout de même.</text>
+  </node>
+  <node id='18' title='Rue TC vers 1984' lat='0' lon='0'>
     <text></text>
   </node>
-  <node id='5' title='' lat='35.72087405072146' lon='6.755366235563473'>
+  <node id='19' title='Renovation rue Servan' lat='0' lon='0'>
+    <text>La rue Servan qui relie le quartier des Antiquaires de Grenoble à la rue Très-Cloîtres, a fait l'objet d'une rénovation en deux temps dans les années 1980-90. 
+Comme vous pouvez le constater sur cette photo, la plupart des logements étaient devenus trop insalubres et avaient dû être murés. 
+La rénovation a permis l'arrivée de nouveaux habitants grâce à un programme d'accession à la propriété, tout en conservant le tracé originel des immeubles du 19e siècle. </text>
+  </node>
+  <node id='20' title='La rue TC en 1969' lat='0' lon='0'>
     <text></text>
-    <tag k='photo' v='POI 19 - renovation rue Servan.jpg' />
+  </node>
+  <node id='21' title='Hotel Vaucanson et son escalier' lat='0' lon='0'>
+    <text>Situé au 8 rue Chenoise</text>
+  </node>
+  <node id='22' title='Casemate' lat='0' lon='0'>
+    <text>patrie des fortification Haxo construite au milieu du 19e pour protéger la ville des invasions italiennes. On retrouve ce type de construction militaire tout le long de la chaine des alpes, de Grenoble à Briançon.</text>
+  </node>
+  <node id='23' title='Anciens appartements du président du parlement du dauphiné' lat='0' lon='0'>
+    <text>date
+valeur historique
+voir plaque au numéro XX</text>
+  </node>
+  <node id='24' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='25' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='26' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='27' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='28' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='29' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='30' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='31' title='Place Edmond Arnaud' lat='45.192573' lon='5.734174'>
+    <text>J’ai eu le plaisir de me rendre la semaine dernière, aux côtés de mes collègues Alain Pilaud, Geneviève Fioraso, Monique Vuaillat, Jacques Chiron, Philippe de Longevialle, Olivier Noblecourt et Pascal Garcia, dans le quartier Très-Cloîtres pour inaugurer le nouveau visage de la Cour Edmond Arnaud.
+J’ai salué cette belle réussite collective dans une ambiance chaleureuse et colorée, à l’image de ce quartier historique aux multiples influences. La forte implication des habitants et des acteurs associatifs dans la conception du projet a permis la mise en œuvre d’aménagements de proximité au plus proche de leur attentes, qui vont dans le sens de la forte attention portée par la Ville depuis plusieurs années à l’amélioration du cadre de vie du quartier Alma-Très Cloître. La mise en accessibilité des entrées d’immeubles et de la salle des habitants, les nouvelles plantations, la création de jeux d’enfants… ont ainsi redonné à cette cour une seconde jeunesse et une attractivité nouvelle pour les habitants et les usagers.
+Cette réalisation, qui fait suite au réaménagement de la Place Edmond Arnaud, de la Cour de l’Alma et à la mise en valeur de Sainte Marie d’en Bas, a bénéficié du concours de nombreux partenaires. J’ai ainsi tenu à remercier le Conseil Général, l’Etat au titre du Contrat urbain de Cohésion Sociale, le bailleur Actis et Geneviève Fioraso pour sa participation au financement du projet au titre de sa réserve parlementaire.
+Un moment convivial au rythme des musiques du monde orchestrées par les DJ du collectif Mixlab, futur gestionnaire d’un autre beau projet, la Salle des Musiques actuelles.
+</text>
+  </node>
+  <node id='32' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='33' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='34' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='35' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='36' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='37' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='38' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='39' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='40' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='41' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='42' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='43' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='44' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='45' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='46' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='47' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='48' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='49' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='50' title='Gonzalez le glacier' lat='45.191336' lon='5.733339'>
+    <text>La rue Servan d'aujourd'hui est un trait d'union où vous trouvez des cabinets, quelques restaurants et des entreprises de service. 
+Il y a quelques années encore, vous y auriez été attirés par les glaces de M. Gonzalez, ou plutôt des frères Gonzales. 
+
+Installés au numéro 10 depuis 1940, la famille Gonzales avait d'abord ouvert une pâtisserie qui se transforma peu à peu en glacier. Des trois frères, l'un fut pris dans la rafle de novembre 1941 et envoyé à Buchenwald dont il reviendra avant de s'éteindre quelques semaines plus tard.
+
+Jusqu'à la fermeture de la boutique et de ses entrepôts de fabrication, Gonzalez fournissait les plus grands restaurants de l'agglomération de Grenoble. Dans ses frigos, vous auriez trouvé des glaces à la violette, à la confiture de lait, mais aussi des parfums plus surprenant comme l'ail ou la tomate pour accompagner les plats salés. Leur grande fierté? Leur "plombière nougatine Grand Marnier". Il parait que ceux qui y avaient gouté en rêvent encore...</text>
+  </node>
+  <node id='51' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='52' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='53' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='54' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='55' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='56' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='57' title='' lat='0' lon='0'>
+    <text></text>
+  </node>
+  <node id='58' title='La Mutualité et les Gitans' lat='45.190365' lon='5.732804'>
+    <text>Entre les deux guerres, le quartier de la Mutualité voit l’installation d’une population de Gitans sédentarisés qui quittent le quartier Saint-Laurent. A la veille de la Seconde Guerre Mondiale, l’essence est rare et chère ce qui limite les déplacements. Par ailleurs, les gens du voyage, à l’époque, ont l’interdiction de circuler. 
+Pendant la Guerre, la sédentarisation est imposée par les municipalités comme condition d’obtention de tickets de rationnement.
+Pendant l’occupation allemande de Grenoble qui commence en septembre 1943, les troupes sont stationnées dans la caserne de l’Alma. Les gitans sédentarisés qui vivent aux alentours sont victimes de discriminations et humiliations, d’arrestations arbitraires. Une partie sera victime des rafles et sera déportée.</text>
   </node>
 
 </osm>

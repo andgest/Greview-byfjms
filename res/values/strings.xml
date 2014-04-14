@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">FirstAndroidView</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="image_content_description">Un Android avec un chien</string>
+	<string name="create_account">Créer un compte</string>
+	<string name="email">Adresse email</string>
+	<string name="password">Mot de passe</string>
+	<string name="connect">Se connecter</string>
+</resources>

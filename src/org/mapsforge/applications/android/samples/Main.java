@@ -48,5 +48,7 @@ public class Main extends Activity {
 		linearLayout.addView(createButton(DualMapViewer.class));
 		linearLayout.addView(createButton(OverlayMapViewer.class));
 		linearLayout.addView(createButton(OverlayBenchmark.class));
+		linearLayout.addView(createButton(OverlayBenchmar.class));
+		linearLayout.addView(createButton(Test.class));
 	}
 }

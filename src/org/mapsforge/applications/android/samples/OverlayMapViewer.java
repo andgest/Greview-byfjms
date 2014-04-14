@@ -73,6 +73,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		mapView = new MapView(this);
 		mapView.setClickable(true);
 		mapView.setBuiltInZoomControls(true);
@@ -102,6 +103,8 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 		System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
 		
 		mTts = new TextToSpeech(this, this);
+		
+		//setContentView(R.layout.activity_main);
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
