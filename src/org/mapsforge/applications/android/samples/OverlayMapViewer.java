@@ -27,7 +27,13 @@ import org.mapsforge.android.maps.overlay.OverlayItem;
 import org.mapsforge.core.model.GeoPoint;
 import org.mapsforge.map.reader.header.FileOpenResult;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
@@ -41,6 +47,7 @@ import android.widget.Toast;
 /**
  * An application which demonstrates how to use overlays.
  */
+@SuppressLint("NewApi")
 public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
 	// private static final GeoPoint BRANDENBURG_GATE = new GeoPoint(52.516273, 13.377725);
 	// private static final GeoPoint CENTRAL_STATION = new GeoPoint(52.52498, 13.36962);
@@ -51,7 +58,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 	private static final File POIS_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
 			"POIs.osm");
 	public LocationManager locationManager;
-	public Marker myPosition;
+	public Marker myPosition = null;
 	public MapView mapView;
 
 	public ArrayList<POI> listPOIs;
@@ -70,6 +77,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 		return new Marker(geoPoint, Marker.boundCenterBottom(drawable));
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -103,8 +111,20 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 		System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
 		
 		mTts = new TextToSpeech(this, this);
+
+		Intent intent = new Intent(this, NotificationReceiverActivity.class);
+		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 		
-		//setContentView(R.layout.activity_main);
+		Notification noti = new Notification.Builder(this)
+        .setContentTitle("POI "+poiNerest.getId()+" : "+poiNerest.getTitle())
+        .setContentText("Appuyer ici pour avoir plus d'information").setSmallIcon(R.drawable.ic_launcher)
+        .setContentIntent(pIntent)
+        .build();
+		
+		NotificationManager notificationManager = 
+				  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		noti.flags |= Notification.FLAG_AUTO_CANCEL;
+		notificationManager.notify(0, noti); 
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
@@ -118,10 +138,11 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 
 	@Override
 	public void onLocationChanged(Location location) {
+		if(myPosition.getGeoPoint().latitude == 0.0 && myPosition.getGeoPoint().longitude == 0.0) {
+			mapView.getMapViewPosition().setCenter(new GeoPoint(location.getLatitude(), location.getLongitude()));
+		}
 		myPosition.setGeoPoint(new GeoPoint(location.getLatitude(), location.getLongitude()));
 		mapView.redraw();
-		// Pour centrer la map
-		// mapView.getMapViewPosition().setCenter(new GeoPoint(location.getLatitude(), location.getLongitude()));
 	}
 
 	@Override
@@ -194,6 +215,15 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 			Log.e("Greview", "Could not initialize TextToSpeech.");
 		}
 	}
+	
+	
+	public class NotificationReceiverActivity extends Activity {
+		  @Override
+		  protected void onCreate(Bundle savedInstanceState) {
+			  super.onCreate(savedInstanceState);
+			  setContentView(R.layout.activity_samples);
+		  }
+	} 
 	
 }
 
