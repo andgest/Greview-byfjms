@@ -42,19 +42,15 @@ import android.widget.Toast;
  * An application which demonstrates how to use overlays.
  */
 public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
-	// private static final GeoPoint BRANDENBURG_GATE = new GeoPoint(52.516273, 13.377725);
-	// private static final GeoPoint CENTRAL_STATION = new GeoPoint(52.52498, 13.36962);
-	// private static final GeoPoint VICTORY_COLUMN = new GeoPoint(52.514505, 13.350111);
 
 	private static final File MAP_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
-			"rhone-alpes.map");// "berlin.map");
-	private static final File POIS_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
-			"POIs.osm");
+			"rhone-alpes.map");
+	
 	public LocationManager locationManager;
 	public Marker myPosition;
 	public MapView mapView;
 
-	public ArrayList<POI> listPOIs;
+	private ArrayList<POI> listPOIs;
 	private POI poiNerest;
 	
 	private TextToSpeech mTts;
@@ -73,6 +69,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		listPOIs = (ArrayList<POI>) this.getIntent().getExtras().get("POI");
 		
 		mapView = new MapView(this);
 		mapView.setClickable(true);
@@ -108,9 +105,6 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
-		ReadXMLFile reader = new ReadXMLFile();
-		listPOIs = new ArrayList<POI>(reader.readXMLFile(POIS_FILE));
-		
 		for(int i=0; i<listPOIs.size(); i++) {
 			overlayItems.add(createMarker(R.drawable.marker_red, new GeoPoint(listPOIs.get(i).getLat(), listPOIs.get(i).getLon())));
 		}
@@ -118,7 +112,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 
 	@Override
 	public void onLocationChanged(Location location) {
-		myPosition.setGeoPoint(new GeoPoint(location.getLatitude(), location.getLongitude()));
+		//myPosition.setGeoPoint(new GeoPoint(location.getLatitude(), location.getLongitude()));
 		mapView.redraw();
 		// Pour centrer la map
 		// mapView.getMapViewPosition().setCenter(new GeoPoint(location.getLatitude(), location.getLongitude()));

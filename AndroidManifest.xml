@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto"
-	package="org.mapsforge.applications.android.samples" android:versionCode="8" android:versionName="0.3.1-SNAPSHOT">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.mapsforge.applications.android.samples"
+    android:installLocation="auto"
+    android:versionCode="8"
+    android:versionName="0.3.1-SNAPSHOT" >
 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
 
-	<application android:allowBackup="true" android:label="Greview" android:icon="@drawable/ic_launcher">
-		<activity android:name=".Main" android:label="Greview">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name=".BasicMapViewer" android:label="BasicMapViewer" />
-		<activity android:name=".DualMapViewer" android:label="DualMapViewer" />
-		<activity android:name=".OverlayMapViewer" android:label="OverlayMapViewer" />
-		<activity android:name=".DownloadMapViewer" android:label="DownloadMapViewer" />
-		<activity android:name=".OverlayBenchmark" android:label="OverlayBenchmark" />
-		<activity android:name=".OverlayBenchmar" android:label="OverlayBenchmar" />
-		<activity android:name=".Test" android:label="Test" />
-	</application>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Greview" >
+        <activity
+            android:name="org.mapsforge.applications.android.samples.SplashScreenActivity"
+            android:label="Greview" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.mapsforge.applications.android.samples.OverlayMapViewer"
+            android:label="OverlayMapViewer" />
+        <activity
+            android:name="org.mapsforge.applications.android.samples.SplashScreenTask"
+            android:label="@string/title_activity_splash_screen" >
+        </activity>
+    </application>
+
 </manifest>

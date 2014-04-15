@@ -17,13 +17,19 @@ package org.mapsforge.applications.android.samples;
 import java.io.File;
 import java.util.ArrayList;
 
-public class POI {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class POI implements Parcelable{
+	public static POICreator CREATOR = new POICreator();
+	
 	private int id;
 	private String title;
 	private double lat;
 	private double lon;
 	private String text;
 	private ArrayList<File> images = new ArrayList();
+	
 	
 	public POI(int id, String title, double lat, double lon, String text) {
 		this.id = id;
@@ -32,6 +38,21 @@ public class POI {
 		this.lon = lon;
 		this.text = text;
 	}
+	
+	/**
+     * This will be used only by the MyCreator
+     * @param source
+     */
+    public POI(Parcel source){
+          /*
+           * Reconstruct from the Parcel
+           */
+          id = source.readInt();
+          title = source.readString();
+          lat = source.readDouble();
+          lon = source.readDouble();
+          text = source.readString();
+    }
 	
 	public int getId() {
 		return id;
@@ -55,6 +76,22 @@ public class POI {
 
 	public ArrayList<File> getImages() {
 		return images;
+	}
+
+	@Override
+	public int describeContents()
+	{
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags)
+	{
+		dest.writeInt(id);
+		dest.writeString(title);
+		dest.writeDouble(lat);
+		dest.writeDouble(lon);
+		dest.writeString(text);
 	}
 	
 }
