@@ -47,12 +47,8 @@ import android.widget.Toast;
 /**
  * An application which demonstrates how to use overlays.
  */
-@SuppressLint("NewApi")
-public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
-	// private static final GeoPoint BRANDENBURG_GATE = new GeoPoint(52.516273, 13.377725);
-	// private static final GeoPoint CENTRAL_STATION = new GeoPoint(52.52498, 13.36962);
-	// private static final GeoPoint VICTORY_COLUMN = new GeoPoint(52.514505, 13.350111);
 
+public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
 	private static final File MAP_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
 			"rhone-alpes.map");// "berlin.map");
 	private static final File POIS_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
@@ -62,22 +58,17 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 	public MapView mapView;
 
 	public ArrayList<POI> listPOIs;
-	private POI poiNerest;
+	private POI poiNerest = null;
 	
 	private TextToSpeech mTts;
 
 	private boolean resumeHasRun = false;
-
-	// ListOverlay mOverlayList = new ListOverlay();
-	// List<OverlayItem> overlayItems = mOverlayList.getOverlayItems();
-	// mapView.getOverlays().add(mOverlayList);
 
 	private Marker createMarker(int resourceIdentifier, GeoPoint geoPoint) {
 		Drawable drawable = getResources().getDrawable(resourceIdentifier);
 		return new Marker(geoPoint, Marker.boundCenterBottom(drawable));
 	}
 
-	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -105,26 +96,6 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 		overlayItems.add(myPosition);
 		setPOIOnMap(overlayItems);
 		mapView.getOverlays().add(listOverlay);
-		
-		
-		poiNerest = getNearestPOI(1000);
-		System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
-		
-		mTts = new TextToSpeech(this, this);
-
-		Intent intent = new Intent(this, NotificationReceiverActivity.class);
-		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
-		
-		Notification noti = new Notification.Builder(this)
-        .setContentTitle("POI "+poiNerest.getId()+" : "+poiNerest.getTitle())
-        .setContentText("Appuyer ici pour avoir plus d'information").setSmallIcon(R.drawable.ic_launcher)
-        .setContentIntent(pIntent)
-        .build();
-		
-		NotificationManager notificationManager = 
-				  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-		noti.flags |= Notification.FLAG_AUTO_CANCEL;
-		notificationManager.notify(0, noti); 
 	}
 	
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
@@ -136,12 +107,44 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 		}
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onLocationChanged(Location location) {
+		//Si aucune geolocalisation n'était définit avant alors on centre la vue sur notre position
 		if(myPosition.getGeoPoint().latitude == 0.0 && myPosition.getGeoPoint().longitude == 0.0) {
 			mapView.getMapViewPosition().setCenter(new GeoPoint(location.getLatitude(), location.getLongitude()));
 		}
-		myPosition.setGeoPoint(new GeoPoint(location.getLatitude(), location.getLongitude()));
+		//Si on constate un changement de position alors on vérifie le POI le plus proche et on lance une nouvelle dictée vocale dans le cas d'un changement de POI le plus proche.
+		if(location.getLatitude() != myPosition.getGeoPoint().latitude || location.getLongitude() != myPosition.getGeoPoint().longitude) {
+			//On met la nouvelle position à jours
+			myPosition.setGeoPoint(new GeoPoint(location.getLatitude(), location.getLongitude()));
+			
+			POI oldPoiNerest = poiNerest;
+			poiNerest = getNearestPOI(1000);
+			//Si le POI le plus proche change, alors on lance un nouveau texte et une nouvelle vue ainsi qu'une notification
+			if(oldPoiNerest != poiNerest) {
+				System.out.println("Le point le plus proche est le n°"+poiNerest.getId()+" "+poiNerest.getTitle());
+				
+				//On lit le texte du POI le plus proche
+				mTts = new TextToSpeech(this, this);
+
+				//On créer une nouvelle notification
+				Intent intent = new Intent(this, NotificationReceiverActivity.class);
+				PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+				
+				Notification notif = new Notification.Builder(this)
+		        .setContentTitle("POI "+poiNerest.getId()+" : "+poiNerest.getTitle())
+		        .setContentText("Appuyer ici pour avoir plus d'information").setSmallIcon(R.drawable.ic_launcher)
+		        .setContentIntent(pIntent)
+		        .build();
+				
+				NotificationManager notificationManager = 
+						  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+				notif.flags |= Notification.FLAG_AUTO_CANCEL;
+				notificationManager.notify(0, notif); 
+			}
+			
+		}
 		mapView.redraw();
 	}
 
@@ -207,7 +210,7 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 				//renvoi une erreur sur la console logcat.
 				Log.e("Greview", "Language is not available.");
 			} else {
-				mTts.speak(poiNerest.getText(), TextToSpeech.QUEUE_FLUSH,  null);
+				mTts.speak(poiNerest.getTitle()+".\n"+poiNerest.getText(), TextToSpeech.QUEUE_FLUSH,  null);
 				//ParleandroidPhone();
 			}
 		} else {
