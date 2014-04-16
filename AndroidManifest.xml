@@ -27,8 +27,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.mapsforge.applications.android.samples.OverlayMapViewer"
-            android:label="OverlayMapViewer" />
+            android:name="org.mapsforge.applications.android.samples.MapViewer"
+            android:label="Visite Grenoble" />
         <activity
             android:name="org.mapsforge.applications.android.samples.SplashScreenTask"
             android:label="@string/title_activity_splash_screen" >

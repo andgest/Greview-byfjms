@@ -48,7 +48,7 @@ import android.widget.Toast;
  * An application which demonstrates how to use overlays.
  */
 
-public class OverlayMapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
+public class MapViewer extends MapActivity implements LocationListener, TextToSpeech.OnInitListener {
 	private static final File MAP_FILE = new File(Environment.getExternalStorageDirectory().getPath(),
 			"rhone-alpes.map");
 	public LocationManager locationManager;
@@ -137,7 +137,10 @@ public class OverlayMapViewer extends MapActivity implements LocationListener, T
 				NotificationManager notificationManager = 
 						  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 				notif.flags |= Notification.FLAG_AUTO_CANCEL;
-				notificationManager.notify(0, notif); 
+				notificationManager.notify(0, notif);
+				
+				Toast toast = Toast.makeText(getBaseContext(), poiNerest.getTitle()+"\n"+poiNerest.getText(), Toast.LENGTH_LONG);
+				toast.show();
 			}
 
 		}

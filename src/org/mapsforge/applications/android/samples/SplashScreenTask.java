@@ -34,7 +34,7 @@ public class SplashScreenTask extends AsyncTask<Void, Void, ArrayList<POI>>
 	}
 	
 	protected void onPostExecute(ArrayList<POI> listPOIs) {
-		Intent i = new Intent(context, OverlayMapViewer.class);
+		Intent i = new Intent(context, MapViewer.class);
 		i.putExtra("POI", listPOIs);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		try {
