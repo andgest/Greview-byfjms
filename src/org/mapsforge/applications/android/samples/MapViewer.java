@@ -42,6 +42,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.widget.Toast;
 
 /**
@@ -56,11 +57,13 @@ public class MapViewer extends MapActivity implements LocationListener, TextToSp
 	public MapView mapView;
 
 	private ArrayList<POI> listPOIs;
+	private ArrayList<Marker> markers = new ArrayList<Marker>();
 	private POI poiNerest = null;
 
 	private TextToSpeech mTts;
 
 	private boolean resumeHasRun = false;
+	private OnMarkerClickListener onMarkerClickListener;
 
 	private Marker createMarker(int resourceIdentifier, GeoPoint geoPoint) {
 		Drawable drawable = getResources().getDrawable(resourceIdentifier);
@@ -99,7 +102,9 @@ public class MapViewer extends MapActivity implements LocationListener, TextToSp
 	public void setPOIOnMap(List<OverlayItem> overlayItems) {
 
 		for(int i=0; i<listPOIs.size(); i++) {
-			overlayItems.add(createMarker(R.drawable.marker_red, new GeoPoint(listPOIs.get(i).getLat(), listPOIs.get(i).getLon())));
+			Marker marker = createMarker(R.drawable.marker_red, new GeoPoint(listPOIs.get(i).getLat(), listPOIs.get(i).getLon()));
+			overlayItems.add(marker);
+			markers.add(marker);
 		}
 	}
 
@@ -226,5 +231,41 @@ public class MapViewer extends MapActivity implements LocationListener, TextToSp
 			  setContentView(R.layout.activity_samples);
 		  }
 	} 
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		super.onTouchEvent(event);
+		System.out.println("LLELELELE");
+		if(onMarkerClickListener == null) {
+			return true;
+		}
+		
+		if(event.getAction() != MotionEvent.ACTION_DOWN) {
+			return true;
+		}
+		
+		int width, height, left, top;
+		
+		for(Marker marker : markers) {
+
+	        width = marker.getDrawable().getIntrinsicWidth();
+	        height = marker.getDrawable().getIntrinsicHeight();
+	        
+			left = marker.getPixelX() - width/2;
+	        top = marker.getPixelY() - height/2;
+
+			if((event.getX(0) >= left) && (event.getY(0) >= top) && 
+					(event.getX(0) <= left + width) && (event.getY(0) <= top + height))
+	        {
+				onMarkerClickListener.onMarkerClick(marker);
+	        }
+		}
+		
+		return true;
+	}
+	
+	public void setOnMarkerClickListener(OnMarkerClickListener onMarkerClickListener) {
+		this.onMarkerClickListener = onMarkerClickListener;
+	}
 
 }
