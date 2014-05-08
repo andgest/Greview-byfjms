@@ -12,5 +12,6 @@
     <string name="connect">Se connecter</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_point_web_view">PointWebView</string>
 
 </resources>

@@ -144,8 +144,14 @@ public class MapViewer extends MapActivity implements LocationListener, TextToSp
 				notif.flags |= Notification.FLAG_AUTO_CANCEL;
 				notificationManager.notify(0, notif);
 				
-				Toast toast = Toast.makeText(getBaseContext(), poiNerest.getTitle()+"\n"+poiNerest.getText(), Toast.LENGTH_LONG);
-				toast.show();
+				Intent webViewIntent = new Intent(this, PointWebView.class);
+				webViewIntent.putExtra("Titre", poiNerest.getTitle());
+				webViewIntent.putExtra("Texte", poiNerest.getText());
+				this.startActivity(webViewIntent);
+				
+				
+				/*Toast toast = Toast.makeText(getBaseContext(), poiNerest.getTitle()+"\n"+poiNerest.getText(), Toast.LENGTH_LONG);
+				toast.show();*/
 			}
 
 		}

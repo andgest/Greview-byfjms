@@ -33,6 +33,10 @@
             android:name="org.mapsforge.applications.android.samples.SplashScreenTask"
             android:label="@string/title_activity_splash_screen" >
         </activity>
+        <activity
+            android:name="org.mapsforge.applications.android.samples.PointWebView"
+            android:label="@string/title_activity_point_web_view" >
+        </activity>
     </application>
 
 </manifest>
